@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# Get the directory of this script
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd  )"
+
+# Define paths relative to the script directory
+HTML_FILE="$SCRIPT_DIR/index.html"
+
+if command -v xdg-mime &> /dev/null; then
+	BROWSER=$(xdg-mime query default x-scheme-handler/http)
+	if [ -z "$BROWSER" ]; then
+		BROWSER="firefox-bin"
+	else
+		BROWSER="${BROWSER%.desktop}"
+	fi
+else
+	BROWSER="firefox-bin"
+fi
+
+$BROWSER --new-window "$HTML_FILE"

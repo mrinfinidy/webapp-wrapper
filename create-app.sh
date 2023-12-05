@@ -32,6 +32,10 @@ replace_launch_script() {
 	chmod +x $APP_NAME/$APP_NAME.sh
 }
 
+replace_desktop() {
+	mv $APP_NAME/DESKTOP_PLACEHOLDER.desktop $APP_NAME/$APP_NAME.desktop
+}
+
 replace_readme() {
 	sed -i "s|LAUNCH_SCRIPT_PLACEHOLDER|$APP_NAME|g" $APP_NAME/README.md
 }

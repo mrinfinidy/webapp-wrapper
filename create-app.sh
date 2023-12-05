@@ -16,6 +16,7 @@ create_app() {
 	replace_html
 	replace_js
 	replace_launch_script
+	replace_desktop
 	replace_readme
 }
 

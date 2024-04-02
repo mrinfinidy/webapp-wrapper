@@ -13,22 +13,13 @@ URL=$2
 create_app() {
 	mkdir $APP_NAME
 	cp -r $SCRIPT_DIR/template/* $APP_NAME
-	replace_html
-	replace_js
 	replace_launch_script
 	replace_desktop
 	replace_readme
 }
 
-replace_html() {
-	sed -i "s|TITLE_PLACEHOLDER|$APP_NAME|g" $APP_NAME/index.html
-}
-
-replace_js() {
-	sed -i "s|URL_PLACEHOLDER|$URL|g" $APP_NAME/index.js
-}
-
 replace_launch_script() {
+        sed -i "s|URL_PLACEHOLDER|$URL|g" $APP_NAME/LAUNCH_SCRIPT_PLACEHOLDER
 	mv $APP_NAME/LAUNCH_SCRIPT_PLACEHOLDER $APP_NAME/$APP_NAME.sh
 	chmod +x $APP_NAME/$APP_NAME.sh
 }
@@ -42,4 +33,3 @@ replace_readme() {
 }
 
 create_app
-

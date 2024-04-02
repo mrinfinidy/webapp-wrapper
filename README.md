@@ -1,4 +1,5 @@
 # WebApp Wrapper
+This is the qutebrowser version of the WebApp Wrapper
 
 ## USAGE
 Create web app

@@ -31,4 +31,4 @@ Enter 'about:config' and set `toolkit.legacyUserProfileCustomizations.stylesheet
 #navigator-toolbox {visibility: collapse;}
 browser {margin-right: -14px; margin-bottom: -14px;}
 ```
-5. Now you can launch a barless instance by running `firefox-bin -P <profile name> <url>`
+5. Now you can launch a barless instance by running `firefox-bin --new-window -P <profile name> <url>`
